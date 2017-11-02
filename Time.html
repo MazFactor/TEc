@@ -6,45 +6,45 @@
     <script type="text/javascript">
 
 
-        //¶¨Òåº¯Êı£º¹¹½¨ÒªÏÔÊ¾µÄÊ±¼äÈÕÆÚ×Ö·û´®
+        //å®šä¹‰å‡½æ•°ï¼šæ„å»ºè¦æ˜¾ç¤ºçš„æ—¶é—´æ—¥æœŸå­—ç¬¦ä¸²
         function showTime()
         {
-            //´´½¨Date¶ÔÏó
+            //åˆ›å»ºDateå¯¹è±¡
             var today = new Date();
-            //·Ö±ğÈ¡³öÄê¡¢ÔÂ¡¢ÈÕ¡¢Ê±¡¢·Ö¡¢Ãë
+            //åˆ†åˆ«å–å‡ºå¹´ã€æœˆã€æ—¥ã€æ—¶ã€åˆ†ã€ç§’
             var year = today.getFullYear();
             var month = today.getMonth()+1;
             var day = today.getDate();
             var hours = today.getHours();
             var minutes = today.getMinutes();
             var seconds = today.getSeconds();
-            //Èç¹ûÊÇµ¥¸öÊı£¬ÔòÇ°Ãæ²¹0
+            //å¦‚æœæ˜¯å•ä¸ªæ•°ï¼Œåˆ™å‰é¢è¡¥0
             month  = month<10  ? "0"+month : month;
             day  = day <10  ? "0"+day : day;
             hours  = hours<10  ? "0"+hours : hours;
             minutes = minutes<10 ? "0"+minutes : minutes;
             seconds = seconds<10 ? "0"+seconds : seconds;
 
-            //¹¹½¨ÒªÊä³öµÄ×Ö·û´®
-            //var str = year+"Äê"+month+"ÔÂ"+day+"ÈÕ "+hours+":"+minutes+":"+seconds;
+            //æ„å»ºè¦è¾“å‡ºçš„å­—ç¬¦ä¸²
+            //var str = year+"å¹´"+month+"æœˆ"+day+"æ—¥ "+hours+":"+minutes+":"+seconds;
             var str = hours+":"+minutes;
-            //»ñÈ¡id=resultµÄ¶ÔÏó
+            //è·å–id=resultçš„å¯¹è±¡
             var obj = document.getElementById("result");
-            //½«strµÄÄÚÈİĞ´Èëµ½id=resultµÄ<div>ÖĞÈ¥
+            //å°†strçš„å†…å®¹å†™å…¥åˆ°id=resultçš„<div>ä¸­å»
             obj.innerHTML = str;
-            //ÑÓÊ±Æ÷
+            //å»¶æ—¶å™¨
             window.setTimeout("showTime()",1000);
         }
     </script>
     <style type="text/css">
         #result{
-            width:35px;
+            width:50px;
             border:1px solid #CCCCCC;
             background: #000000;
             margin: 0 auto;
-            font-size:14px;
             color: #ffffff;
-            font-family: SimHei;
+            /*font-family: Georgia;*/
+            font:18px/22px Georgia, "Times New Roman", Times, serif; text-decoration:none;
 
         }
     </style>
