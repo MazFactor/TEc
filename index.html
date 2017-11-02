@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Page</title>
+    <style type="text/css">
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+            height: 100%;
+        }
+        #header{
+            border-image:linear-gradient(to right,#216684,#83d0f2) 10;
+            width: 100%;
+            height: 93px;
+            clear: both;
+            position: relative;
+            background-color: #ffffff;
+            padding-top:16px;
+            border:6px solid #88D1F1;
+            border-width:6px 0 0;
+            box-shadow:0 0 9px 0 rgba(75, 216, 255, 0.3);
+        }
+        #content{
+            background-color: #88D1F1;
+            width:100%;
+            min-height: 100%;
+            /*height: auto !important;*/
+            /*height: 100%; !*ie6不识别min-height,如上述处理*!*/
+         }
+        #t1{
+            background-color: #a837ad;
+            max-width: 600px;
+            height: 250px;
+            margin: 0 auto;
+            border:solid 1px #000000;
+            overflow:auto;
+        }
+        #t2{
+            float: right;
+            background-color: #74945a;
+            width: 500px;
+            height: 100px;
+            border:solid 1px #ad3079;
+        }
+        #footer{
+            border: solid 1px #313131;
+            width:100%;
+            height:100px;
+            background-color: #333333;
+            bottom: 0;
+        }
+        .FooterText{
+            color: #83D0F2;
+        }
+        .FooterText2{
+            color: #FFFFFF;
+        }
+        #nav-sec{
+            position: absolute;
+            width: 100px;
+            height: 87px;
+            top: 0;
+            left: 1086px;
+            /*border: solid 1px #ad3079;*/
+            background-color: #000000;
+        }
+        .login{
+            color: #FFFFFF;
+            line-height: 87px;
+            font-family: Candara;
+            font-size: 19px;
+            /*font-weight: bold;*/
+        }
+        #sign{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+            border: solid 1px #cccccc;
+            text-align: center;
+        }
+        .logo{
+            position: relative;
+            z-index: 2;
+            width: 170px;
+            height: 30px;
+            background: url("img/web-docs-sprite.22a6a085cf14.svg") 100% 0 no-repeat;
+            background-size: 219px auto;
+            display: block;
+            direction: ltr;
+            text-indent: -9999px;
+            overflow: hidden;
+            left: 30px;
+        }
+
+        @media all and (min-width: 47.9385em) {
+            #header {
+                padding-top: 0;
+                padding-bottom: 0
+            }
+
+            .logo {
+                position: relative;
+                top: 20px;
+                height: 48px;
+                float: left;
+                margin-right: 20px
+            }
+
+            html[dir=rtl] .logo {
+                float: right;
+                margin-left: 20px;
+                margin-right: 0
+            }
+        }
+
+        @media all and (min-width: 63.9385em) {
+            .logo {
+                width: 219px;
+                background-size: 100% auto
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!--Header Begin-->
+<div id="header">
+    <a href="/TEc/index.html" class="logo">MDN Web Docs</a>
+    <div id="nav-sec">
+        <a href="localhost:63342/TEc/index.html">
+            <div id="sign">
+                <ul>
+                    <li style="list-style-type:none;">
+                        <span class="login">Sign in</span>
+                        <!--<i class="icon-github" aria-hidden="true"></i>-->
+                    </li>
+                </ul>
+            </div>
+        </a>
+    </div>
+</div>
+
+<!--Content Begin-->
+<div id="content">
+    <p><br></p>
+    <p><br></p>
+    <p><br></p>
+    <p><br></p>
+    <div id="t1">
+        I'm outside!
+        <div id="t2">I'm inside!</div>
+    </div>
+
+</div>
+
+<!--Footer Begin-->
+<div id="footer">
+    <p><br/>
+    <span class="FooterText">Footer: the text color is like this or </span><span class="FooterText2">THIS</span>
+    </p>
+</div>
+
+</body>
+</html>
