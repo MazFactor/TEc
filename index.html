@@ -32,8 +32,8 @@
             min-height: 100%;
             /*height: auto !important;*/
             /*height: 100%; !*ie6不识别min-height,如上述处理*!*/
-         }
-        #t1{
+        }
+        #mid-left{
             background-color: #a837ad;
             max-width: 600px;
             height: 250px;
@@ -41,12 +41,20 @@
             border:solid 1px #000000;
             overflow:auto;
         }
-        #t2{
+        #center-line{
+            background-color: black;
+            border:solid 1px #ad1058;
+            width: 20px;
+            height: 100%;
+            overflow: auto;
+        }
+        #mid-right{
             float: right;
             background-color: #74945a;
             width: 500px;
             height: 100px;
             border:solid 1px #ad3079;
+            overflow: auto;
         }
         #footer{
             border: solid 1px #313131;
@@ -98,13 +106,11 @@
             overflow: hidden;
             left: 30px;
         }
-
         @media all and (min-width: 47.9385em) {
             #header {
                 padding-top: 0;
                 padding-bottom: 0
             }
-
             .logo {
                 position: relative;
                 top: 20px;
@@ -112,14 +118,12 @@
                 float: left;
                 margin-right: 20px
             }
-
             html[dir=rtl] .logo {
                 float: right;
                 margin-left: 20px;
                 margin-right: 0
             }
         }
-
         @media all and (min-width: 63.9385em) {
             .logo {
                 width: 219px;
@@ -149,21 +153,19 @@
 
 <!--Content Begin-->
 <div id="content">
-    <p><br></p>
-    <p><br></p>
-    <p><br></p>
-    <p><br></p>
-    <div id="t1">
-        I'm outside!
-        <div id="t2">I'm inside!</div>
+
+    <div id="mid-left">
+
     </div>
+    <div id="center-line"></div>
+    <div id="mid-right"></div>
 
 </div>
 
 <!--Footer Begin-->
 <div id="footer">
     <p><br/>
-    <span class="FooterText">Footer: the text color is like this or </span><span class="FooterText2">THIS</span>
+        <span class="FooterText">Footer: the text color is like this or </span><span class="FooterText2">THIS</span>
     </p>
 </div>
 
