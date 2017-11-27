@@ -20,67 +20,15 @@
             height: 93px;
             clear: both;
             position: relative;
-            background-color: #ffffff;
+            background-color: #88D1F1;
             padding-top:16px;
-            border:6px solid #88D1F1;
+            border:6px solid #ffffff;
             border-width:6px 0 0;
             box-shadow:0 0 9px 0 rgba(75, 216, 255, 0.3);
         }
-        #content{
-            background-color: #88D1F1;
-            width:100%;
-            min-height: 100%;
-            /*height: auto !important;*/
-            /*height: 100%; !*ie6不识别min-height,如上述处理*!*/
-        }
-        #mid-left{
-            background-color: #a837ad;
-            max-width: 600px;
-            height: 250px;
-            margin: 0 auto;
-            border:solid 1px #000000;
-            overflow:auto;
-        }
-        #center-line{
-            background-color: black;
-            border:solid 1px #ad1058;
-            width: 20px;
-            height: 100%;
-            overflow: auto;
-        }
-        #mid-right{
-            float: right;
-            background-color: #74945a;
-            width: 500px;
-            height: 100px;
-            border:solid 1px #ad3079;
-            overflow: auto;
-        }
-        #footer{
-            border: solid 1px #313131;
-            width:100%;
-            height:100px;
-            background-color: #333333;
-            bottom: 0;
-        }
-        .FooterText{
-            color: #83D0F2;
-        }
-        .FooterText2{
-            color: #FFFFFF;
-        }
-        #nav-sec{
-            position: absolute;
-            width: 100px;
-            height: 87px;
-            top: 0;
-            right: 0;
-            /*border: solid 1px #ad3079;*/
-            background-color: #000000;
-        }
         .login{
             color: #FFFFFF;
-            line-height: 87px;
+            line-height: 93px;
             font-family: Candara;
             font-size: 19px;
             /*font-weight: bold;*/
@@ -97,7 +45,7 @@
             position: relative;
             z-index: 2;
             width: 170px;
-            height: 30px;
+            height: 50px;
             background: url("img/web-docs-sprite.22a6a085cf14.svg") 100% 0 no-repeat;
             background-size: 219px auto;
             display: block;
@@ -106,37 +54,94 @@
             overflow: hidden;
             left: 30px;
         }
-        @media all and (min-width: 47.9385em) {
-            #header {
-                padding-top: 0;
-                padding-bottom: 0
-            }
-            .logo {
-                position: relative;
-                top: 20px;
-                height: 48px;
-                float: left;
-                margin-right: 20px
-            }
-            html[dir=rtl] .logo {
-                float: right;
-                margin-left: 20px;
-                margin-right: 0
-            }
+
+
+        #content{
+            background-color: #ffffff;
+            width:100%;
+            min-height: 100%;
+
+            /*height: auto !important;*/
+            /*height: 100%; !*ie6不识别min-height,如上述处理*!*/
         }
-        @media all and (min-width: 63.9385em) {
-            .logo {
-                width: 219px;
-                background-size: 100% auto
-            }
+        .column-all{
+            display: -webkit-flex;
+            display: flex;
+            margin: 80px 113px 80px;
+            height: 100%;
+            /*background-color: #89b2a1;*/
         }
+        .column-left{
+            -webkit-flex: initial;
+            flex: initial;
+            width: 64%;
+            min-width: 100px;
+            border-right: solid 1px #DAE3E6;
+        }
+        #before-article{
+            border-bottom: solid 1px #DAE3E6;
+            border-top: solid 1px #DAE3E6;
+        }
+        article{
+            border-bottom: solid 1px #DAE3E6;
+            padding-top: 13px;
+            padding-bottom: 30px;
+        }
+        span{
+            font-size: 10px;
+        }
+        h2{
+            font-family:"Arial","楷体_GB2312";
+            font-size: 22px;
+            color: #242f33;
+            font-weight: lighter;
+
+        }
+        .main-text{
+            padding-top: 15px;
+            font-family:"Arial","楷体_GB2312";
+            font-size: 15px;
+            color: #242f33;
+        }
+        .column-right{
+            -webkit-flex: 1;
+            flex: 1;
+            padding-left: 20px;
+        }
+
+        #footer{
+            border: solid 1px #313131;
+            width:100%;
+            height:100px;
+            background-color: #333333;
+            bottom: 0;
+        }
+        .FooterText{
+            color: #83D0F2;
+            font-size: 20px;
+        }
+        .FooterText2{
+            color: #FFFFFF;
+            font-size: 20px;
+        }
+        #nav-sec{
+            position: absolute;
+            width: 100px;
+            height: 87px;
+            top: 0;
+            right: 0;
+            /*border: solid 1px #ad3079;*/
+            background-color: #000000;
+        }
+
+
     </style>
 </head>
 <body>
 
 <!--Header Begin-->
 <div id="header">
-    <a href="/TEc/index.html" class="logo">MDN Web Docs</a>
+    <a href="/TEc/index.html" class="logo">Ma Chunhao's</a>
     <div id="nav-sec">
         <a href="localhost:63342/TEc/index.html">
             <div id="sign">
@@ -153,14 +158,44 @@
 
 <!--Content Begin-->
 <div id="content">
+    <div class="column-all">
+        <div class="column-left">
+            <div id="before-article">
+                <h2>Articles begin here!</h2>
+            </div>
 
-    <div id="mid-left">
+            <article>
+                <h2>Armie Hammer responds to Buzzfeed article pointing out that Armie Hammer is a…</h2>
+                <span style="color: #00A3DB;">Author: MCH </span>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #7A9199;">Date: 2017-11-27 16:25:35</span>
+                <div id="article1" class="main-text">Your chronology is spot on but your perspective is bitter AF. Maybe I’m just a guy who loves his job and refuses to do anything but what he loves to do...?— Armie Hammer (@armiehammer) November 26, 2017 Early today Anne Helen Petersen published an article in Buzzfeed where she…</div>
+            </article>
+            <article>
+                <h2>Yoo Ah In Calls Out People Leaving Negative Comments Online + Moves To End…</h2>
+                <span style="color: #00A3DB;">Author: MCH </span>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #7A9199;">Date: 2017-11-27 16:25:35</span>
+                <div id="article2" class="main-text">Late at night on November 24, actor Yoo Ah In puzzled fans and lookers-on with his sudden tirade against people leaving negative comments about him online. On his personal Twitter account, he wrote, “ I’ll let you in on a great tip. If you don’t want to look at me,…</div>
+            </article>
+            <article>
+                <h2>Challenge 192 - Voting</h2>
+                <span style="color: #00A3DB;">Author: MCH </span>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #7A9199;">Date: 2017-11-27 16:25:35</span>
+                <div id="article3" class="main-text">voting. 1. You don't have to be a member to vote. 2. Do not vote for yourself and do not ask your friends to vote for you. 3. Anonymous vote is NOT allowed. 4. Vote based on the quality of the icons, not based on the TV shows. 5. Vote for your 4 FAVORITE ICONS (in order of preference), 1 BEST…</div>
+            </article>
+            <article>
+                <h2>乔治娅11.27-12.3周运!</h2>
+                <span style="color: #00A3DB;">Author: MCH </span>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #7A9199;">Date: 2017-11-27 16:25:35</span>
+                <div id="article4" class="main-text">周，太阳、水星、金星和土星全部位于射手座。耶！大家都出去玩吧！不过，还有两件事值得注意：周五，暴烈的火星将会对冲变幻莫测的天王星。（哎呀！）第二天，幸运的木星又会和海王星形成三分相位。因此，这周的主题将是解放、独立、突发事件和压力的纾解--随之而来的是汹涌的怜悯心和对真相的诉求。对同情心的反馈象征着一个世界对灾难的回应…</div>
+            </article>
 
+            <div id="after-article">
+                <h1>----End----</h1>
+            </div>
+        </div>
+        <div class="column-right">
+            wwwwwwww
+        </div>
     </div>
-    <div id="center-line"></div>
-    <div id="mid-right"></div>
 
 </div>
+
 
 <!--Footer Begin-->
 <div id="footer">
