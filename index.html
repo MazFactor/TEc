@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Page</title>
     <link rel="stylesheet" type="text/css" href="CSS/Calendar.css">
+    <script type="text/javascript" src="js/Dynamic_Time.js"></script>
     <style type="text/css">
         * {
             -webkit-box-sizing: border-box;
@@ -20,7 +21,7 @@
         #header {
             border-image: linear-gradient(to right, #216684, #83d0f2) 10;
             width: 100%;
-            height: 93px;
+            height: 76px;
             clear: both;
             position: relative;
             background-color: #88D1F1;
@@ -29,37 +30,44 @@
             border-width: 6px 0 0;
             box-shadow: 0 0 9px 0 rgba(75, 216, 255, 0.3);
         }
-
+        #nav-sec {
+            position: absolute;
+            width: 120px;
+            height: 70px;
+            top: 0;
+            right: 0;
+            /*border: solid 1px #ad3079;*/
+            background-color: #000000;
+        }
+        #sign {
+            position: absolute;
+            width: 100%;
+            height: 70px;
+            margin: 0 auto;
+            /*border: solid 1px #cccccc;*/
+            text-align: center;
+        }
         .login {
             color: #FFFFFF;
-            line-height: 93px;
+            line-height: 70px;
             /*font-family: Serif;*/
             font-size: 19px;
             /*font-weight: bold;*/
         }
-
-        #sign {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            margin: 0 auto;
-            border: solid 1px #cccccc;
-            text-align: center;
-        }
-
-        .logo {
-            position: relative;
-            z-index: 2;
-            width: 170px;
-            height: 50px;
-            background: url("img/web-docs-sprite.22a6a085cf14.svg") 100% 0 no-repeat;
-            background-size: 219px auto;
-            display: block;
-            direction: ltr;
-            text-indent: -9999px;
-            overflow: hidden;
-            left: 30px;
-        }
+        /*.logo {*/
+            /*position: relative;*/
+            /*z-index: 2;*/
+            /*width: 170px;*/
+            /*height: 50px;*/
+            /*background: url("img/web-docs-sprite.22a6a085cf14.svg") 100% 0 no-repeat;*/
+            /*background-size: 219px auto;*/
+            /*display: block;*/
+            /*direction: ltr;*/
+            /*text-indent: -9999px;*/
+            /*overflow: hidden;*/
+            /*left: 30px;*/
+            /*border: solid 1px darkgreen;*/
+        /*}*/
 
         #content {
             background-color: #ffffff;
@@ -73,7 +81,7 @@
         .column-all {
             display: -webkit-flex;
             display: flex;
-            margin: 80px 20px 80px 120px;
+            margin: 80px 20px 80px 90px;
             height: 100%;
             /*background-color: #89b2a1;*/
         }
@@ -88,19 +96,13 @@
 
         #before-article {
             border-bottom: solid 1px #DAE3E6;
-            border-top: solid 1px #DAE3E6;
         }
 
         article {
             border-bottom: solid 1px #DAE3E6;
             padding-top: 13px;
             padding-bottom: 30px;
-        }
-
-        .subject {
-            font-size: 23px;
-            font-family: Arial;
-            color: #242f33;
+            padding-right: 40px;
         }
 
         span {
@@ -110,27 +112,29 @@
         h2 {
             font-family: "Arial";
             font-size: 22px;
-            color: #242f33;
+            color: rgba(11, 16, 17, 0.8);
             font-weight: lighter;
 
         }
-
+        h1{
+            color: rgba(11, 16, 17, 0.8);
+        }
         .main-text {
             padding-top: 15px;
             font-family: "Arial";
             font-size: 15px;
-            color: #242f33;
+            color: rgba(11, 16, 17, 0.8);
         }
 
         .column-right {
             -webkit-flex: 1;
             flex: 1;
-            padding-left: 10px;
             -webkit-align-items: center;
             align-items: center;
             -webkit-justify-content: center;
             justify-content: center;
-            /*border: solid 2px #000000;*/
+            border-top: solid 1px #DAE3E6;
+
         }
 
         #footer {
@@ -151,24 +155,18 @@
             font-size: 20px;
         }
 
-        #nav-sec {
-            position: absolute;
-            width: 100px;
-            height: 87px;
-            top: 0;
-            right: 0;
-            /*border: solid 1px #ad3079;*/
-            background-color: #000000;
-        }
-
 
     </style>
 </head>
-<body>
+<body onload="showTime()">
 
 <!--Header Begin-->
 <div id="header">
-    <a href="/TEc/index.html" class="logo">Ma Chunhao's</a>
+    <!--<a href="/TEc/index.html" class="logo"></a>-->
+    <div class="On-Logo">
+        <a class="Author-name" href="#">Http://TEc</a>
+        <div id="result"></div>
+    </div>
     <div id="nav-sec">
         <a href="localhost:63342/TEc/index.html">
             <div id="sign">
@@ -188,12 +186,10 @@
     <div class="column-all">
         <!-- Left Part -->
         <div class="column-left">
-            <div id="before-article">
-                <h1>Articles begin here!</h1>
-            </div>
+            <div id="before-article"></div>
 
             <article>
-                <h2 class="subject">Hammer responds to Buzzfeed article pointing out that Armie Hammer is a…</h2>
+                <h2>Hammer responds to Buzzfeed article pointing out that Armie Hammer is a…</h2>
                 <span style="color: #00A3DB;">Author: MCH </span>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #7A9199;">Date: 2017-11-27 16:25:35</span>
                 <div id="article1" class="main-text">Your chronology is spot on but your perspective is bitter AF. Maybe
                     I’m just a guy who loves his job and refuses to do anything but what he loves to do...?— Armie
@@ -244,7 +240,7 @@
                     order of preference), 1 BEST…
                 </div>
             </article>
-            <div id="after-article">
+            <div>
                 <h1>----End----</h1>
             </div>
         </div>
@@ -310,6 +306,8 @@
                     <li>31</li>
                 </ul>
             </div>
+            <!--Calendar End-->
+
         </div>
     </div>
 
