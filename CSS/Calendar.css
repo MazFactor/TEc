@@ -1,3 +1,4 @@
+/*-- Calendar --*/
 * {
     box-sizing: border-box;
 }
@@ -10,10 +11,17 @@ body {
     font-family: Verdana, sans-serif;
 }
 
+#Calendar{
+    width: 100%;
+    padding-left: 40px;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: solid 1px #DAE3E6;
+}
+
 .month {
     padding: 10px 25px;
     width: 80%;
-    margin-left: 30px;
     background: #59bcb2;
     text-align: center;
 }
@@ -42,7 +50,6 @@ body {
 }
 
 .weekdays {
-    margin-left: 30px;
     padding: 5px 0;
     background-color: #ddd;
     width: 80%;
@@ -58,7 +65,6 @@ body {
 .days {
     padding: 10px 0;
     background: #eee;
-    margin-left: 30px;
     width: 80%;
 }
 
@@ -99,4 +105,34 @@ body {
     .weekdays li, .days li {
         width: 12.2%;
     }
+}
+
+/*-- Logo, Author and Clock --*/
+.On-Logo{
+    position: relative;
+    width: 200px;
+    height: 70px;
+    left: 30px;
+}
+.Author-name{
+    position: relative;
+    width: 100px;
+    left: 80px;
+    top: 10px;
+    font:18px/22px Georgia, "Times New Roman", Times, serif;
+    text-decoration:none;
+    font-weight: bold;
+    color: #000000;
+}
+#result{
+    position: relative;
+    width:70px;
+    color: #000000;
+    left: 81px;
+    top: 8px;
+    /*font-family: Georgia;*/
+    font-size: 14px;
+    font-family: "Agency FB";
+    font-weight: bolder;
+    text-decoration:none;
 }
