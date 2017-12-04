@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Page</title>
-    <link rel="stylesheet" type="text/css" href="CSS/Calendar.css">
-    <script type="text/javascript" src="js/Clock.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/Calendar.css">
+    <link rel="stylesheet" type="text/css" href="css/my_groundwork.css">
+    <script type="text/javascript" src="js/Dynamic_Time.js"></script>
     <style type="text/css">
         * {
             -webkit-box-sizing: border-box;
@@ -19,7 +20,8 @@
         }
 
         #header {
-            border-image: linear-gradient(to right, #216684, #83d0f2) 10;
+            /*border-image: linear-gradient(to right, #216684, #83d0f2) 10;*/
+            /*box-shadow: 0 0 9px 0 rgba(75, 216, 255, 0.3);*/
             width: 100%;
             height: 76px;
             clear: both;
@@ -28,7 +30,6 @@
             padding-top: 16px;
             border: 6px solid #ffffff;
             border-width: 6px 0 0;
-            box-shadow: 0 0 9px 0 rgba(75, 216, 255, 0.3);
         }
         #nav-sec {
             position: absolute;
@@ -70,9 +71,9 @@
         /*}*/
 
         #content {
-            background-color: #FFFFFF;
+            background-color: #ffffff;
             width: 100%;
-
+            min-height: 100%;
 
             /*height: auto !important;*/
             /*height: 100%; !*ie6不识别min-height,如上述处理*!*/
@@ -81,8 +82,8 @@
         .column-all {
             display: -webkit-flex;
             display: flex;
-            margin: 80px 20px 55px 90px;
-
+            margin: 80px 20px 80px 90px;
+            height: 100%;
             /*background-color: #89b2a1;*/
         }
 
@@ -154,9 +155,20 @@
             color: #FFFFFF;
             font-size: 20px;
         }
-
+        a{
+            text-decoration: none;
+            color: #000;
+        }
+        a:hover{
+            color: #168da8;
+        }
+        .author{
+            color: #00A3D9;
+            font-size: 11px;
+        }
 
     </style>
+    <link rel="stylesheet" href="../../Downloads/The Icons from GroundworkCss/css/groundwork.css">
 </head>
 <body onload="showTime()">
 
@@ -190,7 +202,7 @@
 
             <article>
                 <h2>Hammer responds to Buzzfeed article pointing out that Armie Hammer is a…</h2>
-                <span style="color: #00A3DB;">Author: MCH </span>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #7A9199;">Date: 2017-11-27 16:25:35</span>
+                <span class="icon-user"></span><a class="author" href="#">mch</a></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="icon-time"></span><span class="time-dis">2017-11-27 16:25:35</span>
                 <div id="article1" class="main-text">Your chronology is spot on but your perspective is bitter AF. Maybe
                     I’m just a guy who loves his job and refuses to do anything but what he loves to do...?— Armie
                     Hammer (@armiehammer) November 26, 2017 Early today Anne Helen Petersen published an article in
@@ -199,7 +211,7 @@
             </article>
             <article>
                 <h2>Yoo Ah In Calls Out People Leaving Negative Comments Online + Moves To End…</h2>
-                <span style="color: #00A3DB;">Author: MCH </span>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #7A9199;">Date: 2017-11-27 16:25:35</span>
+                <span class="icon-user"></span><a class="author" href="#">mch</a></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="icon-time"></span><span class="time-dis">2017-11-27 16:25:35</span>
                 <div id="article2" class="main-text">Late at night on November 24, actor Yoo Ah In puzzled fans and
                     lookers-on with his sudden tirade against people leaving negative comments about him online. On his
                     personal Twitter account, he wrote, “ I’ll let you in on a great tip. If you don’t want to look at
@@ -208,7 +220,7 @@
             </article>
             <article>
                 <h2>Challenge 192 - Voting</h2>
-                <span style="color: #00A3DB;">Author: MCH </span>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #7A9199;">Date: 2017-11-27 16:25:35</span>
+                <span class="icon-user"></span><a class="author" href="#">mch</a></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="icon-time"></span><span class="time-dis">2017-11-27 16:25:35</span>
                 <div id="article3" class="main-text">voting. 1. You don't have to be a member to vote. 2. Do not vote
                     for yourself and do not ask your friends to vote for you. 3. Anonymous vote is NOT allowed. 4. Vote
                     based on the quality of the icons, not based on the TV shows. 5. Vote for your 4 FAVORITE ICONS (in
@@ -217,14 +229,14 @@
             </article>
             <article>
                 <h2>乔治娅11.27-12.3周运!</h2>
-                <span style="color: #00A3DB;">Author: MCH </span>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #7A9199;">Date: 2017-11-27 16:25:35</span>
+                <span class="icon-user"></span><a class="author" href="#">mch</a></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="icon-time"></span><span class="time-dis">2017-11-27 16:25:35</span>
                 <div id="article4" class="main-text">
                     周，太阳、水星、金星和土星全部位于射手座。耶！大家都出去玩吧！不过，还有两件事值得注意：周五，暴烈的火星将会对冲变幻莫测的天王星。（哎呀！）第二天，幸运的木星又会和海王星形成三分相位。因此，这周的主题将是解放、独立、突发事件和压力的纾解--随之而来的是汹涌的怜悯心和对真相的诉求。对同情心的反馈象征着一个世界对灾难的回应…
                 </div>
             </article>
             <article>
                 <h2>Yoo Ah In Calls Out People Leaving Negative Comments Online + Moves To End…</h2>
-                <span style="color: #00A3DB;">Author: MCH </span>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #7A9199;">Date: 2017-11-27 16:25:35</span>
+                <span class="icon-user"></span><a class="author" href="#">mch</a></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="icon-time"></span><span class="time-dis">2017-11-27 16:25:35</span>
                 <div id="article5" class="main-text">Late at night on November 24, actor Yoo Ah In puzzled fans and
                     lookers-on with his sudden tirade against people leaving negative comments about him online. On his
                     personal Twitter account, he wrote, “ I’ll let you in on a great tip. If you don’t want to look at
@@ -233,7 +245,7 @@
             </article>
             <article>
                 <h2>Challenge 192 - Voting</h2>
-                <span style="color: #00A3DB;">Author: MCH </span>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #7A9199;">Date: 2017-11-27 16:25:35</span>
+                <span class="icon-user"></span><a class="author" href="#">mch</a></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="icon-time"></span><span class="time-dis">2017-11-27 16:25:35</span>
                 <div id="article6" class="main-text">voting. 1. You don't have to be a member to vote. 2. Do not vote
                     for yourself and do not ask your friends to vote for you. 3. Anonymous vote is NOT allowed. 4. Vote
                     based on the quality of the icons, not based on the TV shows. 5. Vote for your 4 FAVORITE ICONS (in
@@ -307,7 +319,6 @@
                 </ul>
             </div>
             <!--Calendar End-->
-
         </div>
     </div>
 
