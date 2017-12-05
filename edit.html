@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Page</title>
+    <!-- Calendar & Clock -->
+    <link rel="stylesheet" type="text/css" href="css/Calendar.css">
+    <!-- Icons from GroundworkCss -->
+    <link rel="stylesheet" type="text/css" href="css/edit.css">
+    <script type="text/javascript" src="js/Clock.js"></script>
+    <style type="text/css">
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        #header {
+            /*border-image: linear-gradient(to right, #216684, #83d0f2) 10;*/
+            /*box-shadow: 0 0 9px 0 rgba(75, 216, 255, 0.3);*/
+            width: 100%;
+            height: 76px;
+            clear: both;
+            position: relative;
+            background-color: #004359;
+            padding-top: 16px;
+            border: 6px solid #ffffff;
+            border-width: 6px 0 0;
+        }
+        #nav-sec {
+            position: absolute;
+            width: 120px;
+            height: 70px;
+            top: 0;
+            right: 0;
+            /*border: solid 1px #ad3079;*/
+            background-color: #000000;
+        }
+        #sign {
+            position: absolute;
+            width: 100%;
+            height: 70px;
+            margin: 0 auto;
+            /*border: solid 1px #cccccc;*/
+            text-align: center;
+        }
+        .login {
+            color: #FFFFFF;
+            line-height: 70px;
+            /*font-family: Serif;*/
+            font-size: 19px;
+            /*font-weight: bold;*/
+        }
+
+        #content {
+            background-color: #ffffff;
+            width: 100%;
+            min-height: 100%;
+
+            /*height: auto !important;*/
+            /*height: 100%; !*ie6不识别min-height,如上述处理*!*/
+        }
+
+        .column-all {
+            display: -webkit-flex;
+            display: flex;
+            margin: 0px 20px 80px 90px;
+            height: 100%;
+            background-color: #ffffff;
+        }
+
+        .column-left {
+            -webkit-flex: initial;
+            flex: initial;
+            width: 65%;
+            min-width: 100px;
+            border-right: solid 1px #DAE3E6;
+        }
+
+
+        .column-right {
+            -webkit-flex: 1;
+            flex: 1;
+            -webkit-align-items: center;
+            align-items: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            border-top: solid 1px #DAE3E6;
+        }
+        #footer {
+            border: solid 1px #313131;
+            width: 100%;
+            height: 100px;
+            background-color: #004359;
+            bottom: 0;
+        }
+        .FooterText {
+            color: #87908d;
+            font-size: 20px;
+        }
+        .FooterText2 {
+            color: #FFFFFF;
+            font-size: 20px;
+        }
+        a{
+            text-decoration: none;
+            color: #000;
+        }
+        a:hover{
+            color: #168da8;
+        }
+
+
+    </style>
+    <link rel="stylesheet" href="../../Downloads/The Icons from GroundworkCss/css/groundwork.css">
+</head>
+<body onload="showTime()">
+
+<!--Header Begin-->
+<div id="header">
+    <!--<a href="/TEc/index.html" class="logo"></a>-->
+    <div class="On-Logo">
+        <a class="Author-name" href="#">Http://TEc</a>
+        <div id="result">dsfds</div>
+    </div>
+    <div id="nav-sec">
+        <a href="localhost:63342/TEc/index.html">
+            <div id="sign">
+                <ul>
+                    <li style="list-style-type:none;">
+                        <span class="login">Sign in</span>
+                        <!--<i class="icon-github" aria-hidden="true"></i>-->
+                    </li>
+                </ul>
+            </div>
+        </a>
+    </div>
+</div>
+
+<!--Content-->
+<div id="content">
+    <div class="column-all">
+        <!-- Left Part -->
+        <div class="column-left">
+            <form action="" method="post" id="post" class="lj-widget" data-widget="postForm">
+                <div ng-app="Update" ng-controller="PageCtrl as page">
+
+                    <!-- Subject mch -->
+                    <div class="b-updatepage-subjectbox">
+                        <dl class=" b-updatepage-field b-updatepage-field-subject ">
+                            <dt class="b-updatepage-field-head">
+                                <span class="b-updatepage-field-subhead">
+                                    <label for="subject">Subject</label>
+                                </span>
+                            </dt>
+                            <dd class="b-updatepage-field-body lj-widget" data-widget="restorable" data-widget-options="{&quot;name&quot;:&quot;subject&quot;}">
+                                <input type="text" name="subject" id="subject" class="b-updatepage-input b-updatepage-input-subject" tabindex="40" maxlength="100">
+                            </dd>
+                        </dl>
+                    </div>
+
+                    <div class=" b-updatepage-event  ">
+                        <div class=" b-updatepage-event-section lj-widget " data-widget="editor" data-widget-options="{ &quot;loadRTE&quot;: false }">
+                            <!-- Tab & Full Screen mch -->
+                            <div class="b-updatepage-event-controls">
+                                <ul class="b-updatepage-tabs">
+
+                                </ul>
+
+                            </div>
+                            <!-- Toolbar mch -->
+                            <div class="b-updateform-bar">
+                                <div class=" b-updateform-buttons b-updateform-buttons-aside ">
+
+                                </div>
+                            </div>
+                            <textarea ng-non-bindable="" name="body" id="body" cols="60" rows="10" class="b-updateform-textarea" tabindex="50" autocomplete="off"></textarea>
+                        </div>
+                    </div>
+                    <!-- /s-body  -->
+
+                </div>
+            </form>
+
+
+
+
+        </div>
+
+        <!-- right -->
+        <div class="column-right">
+            <!-- Calendar -->
+            <div id="Calendar">
+                <div class="month">
+                    <ul>
+                        <li class="prev">&#10094;</li>
+                        <li class="next">&#10095;</li>
+                        <li>
+                            August<br>
+                            <span style="font-size:16px">2017</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <ul class="weekdays">
+                    <li>Mo</li>
+                    <li>Tu</li>
+                    <li>We</li>
+                    <li>Th</li>
+                    <li>Fr</li>
+                    <li>Sa</li>
+                    <li>Su</li>
+                </ul>
+
+                <ul class="days">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                    <li>9</li>
+                    <li><span class="active">10</span></li>
+                    <li>11</li>
+                    <li>12</li>
+                    <li>13</li>
+                    <li>14</li>
+                    <li>15</li>
+                    <li>16</li>
+                    <li>17</li>
+                    <li>18</li>
+                    <li>19</li>
+                    <li>20</li>
+                    <li>21</li>
+                    <li>22</li>
+                    <li>23</li>
+                    <li>24</li>
+                    <li>25</li>
+                    <li>26</li>
+                    <li>27</li>
+                    <li>28</li>
+                    <li>29</li>
+                    <li>30</li>
+                    <li>31</li>
+                </ul>
+            </div>
+            <!--Calendar End-->
+        </div>
+    </div>
+
+</div>
+
+
+<!-- Footer -->
+<div id="footer">
+    <p><br/>
+        <span class="FooterText">Footer: the text color is like this or </span><span class="FooterText2">THIS</span>
+    </p>
+</div>
+
+</body>
+</html>
