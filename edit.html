@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Page</title>
@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="css/Calendar.css">
     <!-- Icons from GroundworkCss -->
     <link rel="stylesheet" type="text/css" href="css/edit.css">
+    <link rel="stylesheet" type="text/css" href="CSS/my_groundwork.css">
     <script type="text/javascript" src="js/Clock.js"></script>
     <style type="text/css">
         * {
@@ -33,6 +34,7 @@
             border: 6px solid #ffffff;
             border-width: 6px 0 0;
         }
+
         #nav-sec {
             position: absolute;
             width: 120px;
@@ -42,6 +44,7 @@
             /*border: solid 1px #ad3079;*/
             background-color: #000000;
         }
+
         #sign {
             position: absolute;
             width: 100%;
@@ -50,6 +53,7 @@
             /*border: solid 1px #cccccc;*/
             text-align: center;
         }
+
         .login {
             color: #FFFFFF;
             line-height: 70px;
@@ -70,7 +74,7 @@
         .column-all {
             display: -webkit-flex;
             display: flex;
-            margin: 0px 20px 80px 90px;
+            margin: 80px 20px 80px 90px;
             height: 100%;
             background-color: #ffffff;
         }
@@ -83,7 +87,6 @@
             border-right: solid 1px #DAE3E6;
         }
 
-
         .column-right {
             -webkit-flex: 1;
             flex: 1;
@@ -93,6 +96,7 @@
             justify-content: center;
             border-top: solid 1px #DAE3E6;
         }
+
         #footer {
             border: solid 1px #313131;
             width: 100%;
@@ -100,19 +104,23 @@
             background-color: #004359;
             bottom: 0;
         }
+
         .FooterText {
             color: #87908d;
             font-size: 20px;
         }
+
         .FooterText2 {
             color: #FFFFFF;
             font-size: 20px;
         }
-        a{
+
+        a {
             text-decoration: none;
             color: #000;
         }
-        a:hover{
+
+        a:hover {
             color: #168da8;
         }
 
@@ -149,9 +157,9 @@
         <!-- Left Part -->
         <div class="column-left">
             <form action="" method="post" id="post" class="lj-widget" data-widget="postForm">
-                <div ng-app="Update" ng-controller="PageCtrl as page">
+                <div>
 
-                    <!-- Subject mch -->
+                    <!-- Subject -->
                     <div class="b-updatepage-subjectbox">
                         <dl class=" b-updatepage-field b-updatepage-field-subject ">
                             <dt class="b-updatepage-field-head">
@@ -159,36 +167,54 @@
                                     <label for="subject">Subject</label>
                                 </span>
                             </dt>
-                            <dd class="b-updatepage-field-body lj-widget" data-widget="restorable" data-widget-options="{&quot;name&quot;:&quot;subject&quot;}">
-                                <input type="text" name="subject" id="subject" class="b-updatepage-input b-updatepage-input-subject" tabindex="40" maxlength="100">
+                            <dd class="b-updatepage-field-body">
+                                <input type="text" name="subject" id="subject"
+                                       class="b-updatepage-input b-updatepage-input-subject" tabindex="40"
+                                       maxlength="100">
                             </dd>
                         </dl>
                     </div>
 
-                    <div class=" b-updatepage-event  ">
-                        <div class=" b-updatepage-event-section lj-widget " data-widget="editor" data-widget-options="{ &quot;loadRTE&quot;: false }">
-                            <!-- Tab & Full Screen mch -->
-                            <div class="b-updatepage-event-controls">
-                                <ul class="b-updatepage-tabs">
+                    <div class="b-updatepage-event-section">
+                        <!-- Toolbar -->
+                        <div class="b-updateform-bar">
+                            <div>
+                                <a><span class="icon-cut" te></span></a>
+                                <a><span class="icon-copy"></span></a>
+                                <a><span class="icon-paste"></span></a>
+                                <span>|</span>
+                                <a><span class="icon-undo"></span></a>
+                                <a><span class="icon-repeat"></span></a>
+                                <span>|</span>
+                                <a><span class="icon-bold"></span></a>
+                                <a><span class="icon-italic"></span></a>
+                                <a><span class="icon-underline"></span></a>
+                                <a><span class="icon-font"></span></a>
+                                <span>|</span>
+                                <a><span class="icon-align-left"></span></a>
+                                <a><span class="icon-align-center"></span></a>
+                                <a><span class="icon-align-right"></span></a>
+                                <a><span class="icon-align-justify"></span></a>
+                                <a><span class="icon-columns"></span></a>
+                                <span>|</span>
+                                <a><span class="icon-indent-left"></span></a>
+                                <a><span class="icon-indent-right"></span></a>
+                                <a><span class="icon-link"></span></a>
+                                <span>|</span>
+                                <a><span class="icon-list"></span></a>
+                                <a><span class="icon-list-ol"></span></a>
+                                <a><span class="icon-list-ul"></span></a>
 
-                                </ul>
 
                             </div>
-                            <!-- Toolbar mch -->
-                            <div class="b-updateform-bar">
-                                <div class=" b-updateform-buttons b-updateform-buttons-aside ">
-
-                                </div>
-                            </div>
-                            <textarea ng-non-bindable="" name="body" id="body" cols="60" rows="10" class="b-updateform-textarea" tabindex="50" autocomplete="off"></textarea>
                         </div>
+                        <textarea name="body" id="body" cols="60" rows="10" class="b-updateform-textarea" tabindex="50"
+                                  autocomplete="off"></textarea>
                     </div>
                     <!-- /s-body  -->
 
                 </div>
             </form>
-
-
 
 
         </div>
