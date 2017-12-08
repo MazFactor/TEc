@@ -1,9 +1,10 @@
-.b-updatepage {
-    position: relative;
-    margin: 0 60px;
-    padding: 50px 0;
-    color: #242F33
-}
+/*.b-updatepage {*/
+    /*position: relative;*/
+    /*margin: 0 60px;*/
+    /*padding: 50px 0;*/
+    /*color: #242F33*/
+/*}*/
+
 .b-updatepage-artwork, .b-updatepage-lead, .b-updatepage-subjectbox {
     width: 95%;
     margin: 0 0 30px
@@ -54,40 +55,41 @@
     position: relative;
     width: 100%;
     margin: 0;
-    padding: 0;
+    padding: 4px 8px 4px;
     border: 1px solid #999;
     border-bottom: 0;
     box-sizing: border-box;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
     background: #F7F9FA;
-    font: 11px/12px Arial, sans-serif
+    font: 14px/18px Arial, sans-serif
 }
 
-.b-updateform-bar:after, .b-updateform-bar:before {
-    display: table;
-    border-collapse: collapse;
-    content: ""
-}
+/*.b-updateform-bar:after, .b-updateform-bar:before {*/
+    /*display: table;*/
+    /*border-collapse: collapse;*/
+    /*content: ""*/
+/*}*/
 
-.b-updateform-bar:after {
-    clear: both
-}
+/*.b-updateform-bar:after {*/
+    /*clear: both*/
+/*}*/
 
-.b-updateform-buttons {
-    display: none;
-    float: left;
-    height: 34px;
-    margin: 0;
-    padding: 4px 0 0;
-    list-style: none
-}
+/*.b-updateform-buttons {*/
+    /*display: none;*/
+    /*float: left;*/
+    /*height: 34px;*/
+    /*margin: 0;*/
+    /*padding: 4px 0 0;*/
+    /*list-style: none;*/
 
-.b-updateform-buttons-aside {
-    display: block;
-    float: right;
-    margin-right: 2px
-}
+/*}*/
+
+/*.b-updateform-buttons-aside {*/
+    /*display: block;*/
+    /*float: right;*/
+    /*margin-right: 2px*/
+/*}*/
 
 .b-updateform-textarea {
     position: relative;
