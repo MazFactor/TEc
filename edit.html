@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Page</title>
     <!-- Calendar & Clock -->
-    <link rel="stylesheet" type="text/css" href="css/Calendar.css">
+    <link rel="stylesheet" type="text/css" href="css/calendar.css">
     <!-- Icons from GroundworkCss -->
     <link rel="stylesheet" type="text/css" href="css/edit.css">
     <link rel="stylesheet" type="text/css" href="CSS/my_groundwork.css">
@@ -227,10 +227,29 @@
                     <ul>
                         <li class="prev">&#10094;</li>
                         <li class="next">&#10095;</li>
-                        <li>
-                            August<br>
-                            <span style="font-size:16px">2017</span>
-                        </li>
+                        <script type="text/javascript">
+                            var date = new Date();
+                            var curYear = date.getFullYear();;
+                            var curMonth = date.getMonth();
+                            var monthText = "";
+                            //                            var monthHtml = document.getElementById("month");
+
+                            switch (curMonth){
+                                case 0: monthText = "January".toUpperCase();
+                                case 1: monthText = "February".toUpperCase();
+                                case 2: monthText = "March".toUpperCase();
+                                case 3: monthText = "April".toUpperCase();
+                                case 4: monthText = "May".toUpperCase();
+                                case 5: monthText = "June".toUpperCase();
+                                case 6: monthText = "July".toUpperCase();
+                                case 7: monthText = "August".toUpperCase();
+                                case 8: monthText = "September".toUpperCase();
+                                case 9: monthText = "October".toUpperCase();
+                                case 10: monthText = "November".toUpperCase();
+                                case 11: monthText = "December".toUpperCase();
+                            }
+                            document.write("<li>" + monthText + "<br><span style='color: #FFFFFF; font-size:16px'>"+curYear+"</span></li>");
+                        </script>
                     </ul>
                 </div>
 
@@ -245,37 +264,50 @@
                 </ul>
 
                 <ul class="days">
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                    <li>4</li>
-                    <li>5</li>
-                    <li>6</li>
-                    <li>7</li>
-                    <li>8</li>
-                    <li>9</li>
-                    <li><span class="active">10</span></li>
-                    <li>11</li>
-                    <li>12</li>
-                    <li>13</li>
-                    <li>14</li>
-                    <li>15</li>
-                    <li>16</li>
-                    <li>17</li>
-                    <li>18</li>
-                    <li>19</li>
-                    <li>20</li>
-                    <li>21</li>
-                    <li>22</li>
-                    <li>23</li>
-                    <li>24</li>
-                    <li>25</li>
-                    <li>26</li>
-                    <li>27</li>
-                    <li>28</li>
-                    <li>29</li>
-                    <li>30</li>
-                    <li>31</li>
+                    <!--动态输出35天日历并高亮显示当前日期-->
+                    <script type="text/javascript">
+                        var curDate = new Date();
+                        var calendar = document.getElementsByClassName("days")[0];
+                        var year = curDate.getFullYear();
+                        var month = curDate.getMonth() + 1;
+                        var today = curDate.getDate();
+                        var weekDay = curDate.getDay();
+                        var countDays = (new Date(year, month, 0)).getDate();
+
+                        var dayNo = 0;
+                        var highlighted = false; // 是否已高亮显示过当前日期?
+                        var totalCount = 35; // 仅显示35天的日历
+
+                        // 周一是几号？
+                        if (weekDay == 0) {
+                            dayNo = today - 6;
+                        }
+                        else {
+                            dayNo = today - (weekDay + 1);
+                        }
+
+                        // 打印日历并高亮显示当前日期
+                        do {
+                            if (today == dayNo && highlighted == false) {
+                                calendar.innerHTML += "<li style='background: #43857b;color: white !important'>" + dayNo + "</li>";
+                                highlighted = true;
+                            }
+                            else {
+                                calendar.innerHTML += "<li>" + dayNo + "</li>";
+                            }
+
+                            // 格式缩进
+                            if (countDays !== 1)
+                                calendar.innerHTML += "\n";
+
+                            // 如果是当前月最后一天则从下个月第一天开始继续打印直到打印完35天为止
+                            if (dayNo == countDays)
+                                dayNo = 1;
+                            else
+                                dayNo++;
+                            totalCount--;
+                        } while (totalCount !== 0);
+                    </script>
                 </ul>
             </div>
             <!--Calendar End-->

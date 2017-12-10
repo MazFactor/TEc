@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Page</title>
-    <link rel="stylesheet" type="text/css" href="css/Calendar.css">
+    <link rel="stylesheet" type="text/css" href="css/calendar.css">
     <link rel="stylesheet" type="text/css" href="css/my_groundwork.css">
     <script type="text/javascript" src="js/Clock.js"></script>
     <style type="text/css">
@@ -282,11 +282,39 @@
                     <ul>
                         <li class="prev">&#10094;</li>
                         <li class="next">&#10095;</li>
-                        <li>
-                            August<br>
-                            <span style="font-size:16px">2017</span>
-                        </li>
+                        <script type="text/javascript">
+                            var date = new Date();
+                            var curYear = date.getFullYear();;
+                            var curMonth = date.getMonth();
+                            var monthText = "";
+//                            var monthHtml = document.getElementById("month");
+
+                            switch (curMonth){
+                                case 0: monthText = "January".toUpperCase();
+                                case 1: monthText = "February".toUpperCase();
+                                case 2: monthText = "March".toUpperCase();
+                                case 3: monthText = "April".toUpperCase();
+                                case 4: monthText = "May".toUpperCase();
+                                case 5: monthText = "June".toUpperCase();
+                                case 6: monthText = "July".toUpperCase();
+                                case 7: monthText = "August".toUpperCase();
+                                case 8: monthText = "September".toUpperCase();
+                                case 9: monthText = "October".toUpperCase();
+                                case 10: monthText = "November".toUpperCase();
+                                case 11: monthText = "December".toUpperCase();
+                            }
+                            document.write("<li>" + monthText + "<br><span style='color: #FFFFFF; font-size:16px'>"+curYear+"</span></li>");
+                        </script>
                     </ul>
+                    <!--<ul>-->
+                        <!--<li class="prev">&#10094;</li>-->
+                        <!--<li class="next">&#10095;</li>-->
+                        <!--<li>-->
+
+                            <!--August<br>-->
+                            <!--<span style="font-size:16px">2017</span>-->
+                        <!--</li>-->
+                    <!--</ul>-->
                 </div>
 
                 <ul class="weekdays">
@@ -299,12 +327,12 @@
                     <li>Su</li>
                 </ul>
 
-                <ul id="days" class="days">
+                <ul class="days">
 
                     <!--动态输出35天日历并高亮显示当前日期-->
                     <script type="text/javascript">
                         var curDate = new Date();
-                        var calendar = document.getElementById("days");
+                        var calendar = document.getElementsByClassName("days")[0];
                         var year = curDate.getFullYear();
                         var month = curDate.getMonth() + 1;
                         var today = curDate.getDate();
