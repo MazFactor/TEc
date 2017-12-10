@@ -17,6 +17,8 @@ function showTime()
     minutes = minutes<10 ? "0"+minutes : minutes;
     seconds = seconds<10 ? "0"+seconds : seconds;
 
+
+
     //构建要输出的字符串
     //var str = year+"年"+month+"月"+day+"日 "+hours+":"+minutes+":"+seconds;
     var str = hours+":"+minutes+":"+seconds;
@@ -26,4 +28,5 @@ function showTime()
     obj.innerHTML = str;
     //延时器
     window.setTimeout("showTime()",1000);
+
 }

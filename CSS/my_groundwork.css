@@ -23,3 +23,91 @@
 .icon-time:before {
     content: "\f017"
 }
+
+.icon-cut:before {
+    content: "\f0c4"
+}
+
+.icon-copy:before {
+    content: "\f0c5"
+}
+
+.icon-paste:before {
+    content: "\f0ea"
+}
+
+.icon-link:before {
+    content: "\f0c1"
+}
+
+.icon-indent-left:before {
+    content: "\f03b"
+}
+
+.icon-indent-right:before {
+    content: "\f03c"
+}
+
+.icon-save:before {
+    content: "\f0c7"
+}
+
+.icon-list-ul:before {
+    content: "\f0ca"
+}
+
+.icon-list-ol:before {
+    content: "\f0cb"
+}
+
+.icon-underline:before {
+    content: "\f0cd"
+}
+
+.icon-font:before {
+    content: "\f031"
+}
+
+.icon-bold:before {
+    content: "\f032"
+}
+
+.icon-italic:before {
+    content: "\f033"
+}
+
+.icon-align-left:before {
+    content: "\f036"
+}
+
+.icon-align-center:before {
+    content: "\f037"
+}
+
+.icon-align-right:before {
+    content: "\f038"
+}
+
+.icon-align-justify:before {
+    content: "\f039"
+}
+
+.icon-list:before {
+    content: "\f03a"
+}
+
+.icon-list-ul:before {
+    content: "\f0ca"
+}
+
+.icon-list-ol:before {
+    content: "\f0cb"
+}
+
+.icon-rotate-left:before, .icon-undo:before {
+    content: "\f0e2"
+}
+
+.icon-rotate-right:before, .icon-repeat:before {
+    content: "\f01e"
+}
