@@ -229,25 +229,38 @@
                         <li class="next">&#10095;</li>
                         <script type="text/javascript">
                             var date = new Date();
-                            var curYear = date.getFullYear();;
+                            var curYear = date.getFullYear();
+
                             var curMonth = date.getMonth();
                             var monthText = "";
 
-                            switch (curMonth){
-                                case 0: monthText = "January".toUpperCase();
-                                case 1: monthText = "February".toUpperCase();
-                                case 2: monthText = "March".toUpperCase();
-                                case 3: monthText = "April".toUpperCase();
-                                case 4: monthText = "May".toUpperCase();
-                                case 5: monthText = "June".toUpperCase();
-                                case 6: monthText = "July".toUpperCase();
-                                case 7: monthText = "August".toUpperCase();
-                                case 8: monthText = "September".toUpperCase();
-                                case 9: monthText = "October".toUpperCase();
-                                case 10: monthText = "November".toUpperCase();
-                                case 11: monthText = "December".toUpperCase();
+                            switch (curMonth) {
+                                case 0:
+                                    monthText = "January".toUpperCase();
+                                case 1:
+                                    monthText = "February".toUpperCase();
+                                case 2:
+                                    monthText = "March".toUpperCase();
+                                case 3:
+                                    monthText = "April".toUpperCase();
+                                case 4:
+                                    monthText = "May".toUpperCase();
+                                case 5:
+                                    monthText = "June".toUpperCase();
+                                case 6:
+                                    monthText = "July".toUpperCase();
+                                case 7:
+                                    monthText = "August".toUpperCase();
+                                case 8:
+                                    monthText = "September".toUpperCase();
+                                case 9:
+                                    monthText = "October".toUpperCase();
+                                case 10:
+                                    monthText = "November".toUpperCase();
+                                case 11:
+                                    monthText = "December".toUpperCase();
                             }
-                            document.write("<li>" + monthText + "<br><span style='color: #FFFFFF; font-size:16px'>"+curYear+"</span></li>");
+                            document.write("<li>" + monthText + "<br><span style='color: #FFFFFF; font-size:16px'>" + curYear + "</span></li>");
                         </script>
                     </ul>
                 </div>
@@ -263,6 +276,7 @@
                 </ul>
 
                 <ul class="days">
+
                     <!--动态输出35天日历并高亮显示当前日期-->
                     <script type="text/javascript">
                         var curDate = new Date();
@@ -270,42 +284,46 @@
                         var year = curDate.getFullYear();
                         var month = curDate.getMonth() + 1;
                         var today = curDate.getDate();
-                        var weekDay = curDate.getDay();
                         var countDays = (new Date(year, month, 0)).getDate();
 
-                        var dayNo = 0;
+
                         var highlighted = false; // 是否已高亮显示过当前日期?
-                        var totalCount = 35; // 仅显示35天的日历
+                        curDate.setDate(1); //
+                        var firstDayCurMonth = curDate.getDay(); // 当前月的1号是周几
+                        var moMatch = [0, 1, 2, 3, 4, 5, 6];
 
-                        // 周一是几号？
-                        if (weekDay == 0) {
-                            dayNo = today - 6;
-                        }
-                        else {
-                            dayNo = today - (weekDay + 1);
-                        }
+                        curDate.setDate(0);
+                        var lastDayLastMonth = curDate.getDate();
+                        var dayNo = lastDayLastMonth - parseInt(moMatch[firstDayCurMonth]) + 1;
+                        var restCount = 42 - moMatch[firstDayCurMonth]; // 仅显示42天的日历
 
-                        // 打印日历并高亮显示当前日期
+                        // 打印上个月日期
+                        do {
+                            if (dayNo > lastDayLastMonth) {
+                                dayNo = 1;
+                                break;
+                            }
+                            calendar.innerHTML += "<li>" + dayNo + "</li>\n";
+                            dayNo++;
+                        } while (true);
+
+                        // 打印当前月日历并高亮显示当前日期
                         do {
                             if (today == dayNo && highlighted == false) {
-                                calendar.innerHTML += "<li style='background: #43857b;color: white !important'>" + dayNo + "</li>";
+                                calendar.innerHTML += "<li style='background: #43857b;color: white !important'>" + dayNo + "</li>\n";
                                 highlighted = true;
                             }
                             else {
-                                calendar.innerHTML += "<li>" + dayNo + "</li>";
+                                calendar.innerHTML += "<li>" + dayNo + "</li>\n";
                             }
-
-                            // 格式缩进
-                            if (countDays !== 1)
-                                calendar.innerHTML += "\n";
 
                             // 如果是当前月最后一天则从下个月第一天开始继续打印直到打印完35天为止
                             if (dayNo == countDays)
                                 dayNo = 1;
                             else
                                 dayNo++;
-                            totalCount--;
-                        } while (totalCount !== 0);
+                            restCount--;
+                        } while (restCount !== 0);
                     </script>
                 </ul>
             </div>
