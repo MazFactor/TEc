@@ -6,7 +6,7 @@
 /*}*/
 
 .b-updatepage-artwork, .b-updatepage-lead, .b-updatepage-subjectbox {
-    width: 95%;
+    width: 100%;
     margin: 0 0 30px
 }
 
@@ -14,7 +14,7 @@
     position: relative;
     z-index: 5;
     float: left;
-    width: 95%
+    width: 100%
 }
 
 .b-updatepage-field-subhead {

@@ -3,11 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <title>Page</title>
+
+    <!--Froala-->
+
+    <!-- Include Font Awesome. -->
+    <link href="utils/Froala/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+
+    <!-- Include Editor style. -->
+    <link href="utils/Froala/css/froala_editor.min.css" rel="stylesheet" type="text/css"/>
+    <link href="utils/Froala/css/froala_style.min.css" rel="stylesheet" type="text/css"/>
+
+    <!-- Include Code Mirror style -->
+    <link rel="stylesheet" href="utils/Froala/css/codemirror.min.css">
+
+    <!-- Include Editor Plugins style. -->
+    <link rel="stylesheet" href="utils/Froala/css/plugins/char_counter.css">
+    <link rel="stylesheet" href="utils/Froala/css/plugins/code_view.css">
+    <link rel="stylesheet" href="utils/Froala/css/plugins/colors.css">
+    <link rel="stylesheet" href="utils/Froala/css/plugins/emoticons.css">
+    <link rel="stylesheet" href="utils/Froala/css/plugins/file.css">
+    <link rel="stylesheet" href="utils/Froala/css/plugins/fullscreen.css">
+    <link rel="stylesheet" href="utils/Froala/css/plugins/image.css">
+    <link rel="stylesheet" href="utils/Froala/css/plugins/image_manager.css">
+    <link rel="stylesheet" href="utils/Froala/css/plugins/line_breaker.css">
+    <link rel="stylesheet" href="utils/Froala/css/plugins/quick_insert.css">
+    <link rel="stylesheet" href="utils/Froala/css/plugins/table.css">
+    <link rel="stylesheet" href="utils/Froala/css/plugins/video.css">
+
+    <!-- CSS rules for styling the element inside the editor such as p, h1, h2, etc. -->
+    <link href="utils/Froala/css/froala_style.min.css" rel="stylesheet" type="text/css"/>
+
+    <!--Froala End-->
+
+
     <!-- Calendar & Clock -->
-    <link rel="stylesheet" type="text/css" href="css/calendar.css">
+    <link rel="stylesheet" type="text/css" href="CSS/calendar.css">
     <!-- Icons from GroundworkCss -->
-    <link rel="stylesheet" type="text/css" href="css/edit.css">
-    <link rel="stylesheet" type="text/css" href="CSS/my_groundwork.css">
+    <link rel="stylesheet" type="text/css" href="CSS/edit.css">
+
     <script type="text/javascript" src="js/Clock.js"></script>
     <style type="text/css">
         * {
@@ -85,6 +118,7 @@
             width: 65%;
             min-width: 100px;
             border-right: solid 1px #DAE3E6;
+            padding-right: 30px;
         }
 
         .column-right {
@@ -124,9 +158,7 @@
             color: #168da8;
         }
 
-
     </style>
-    <link rel="stylesheet" href="../../Downloads/The Icons from GroundworkCss/css/groundwork.css">
 </head>
 <body onload="showTime()">
 
@@ -156,66 +188,100 @@
     <div class="column-all">
         <!-- Left Part -->
         <div class="column-left">
-            <form action="" method="post" id="post" class="lj-widget" data-widget="postForm">
-                <div>
-
-                    <!-- Subject -->
-                    <div class="b-updatepage-subjectbox">
-                        <dl class=" b-updatepage-field b-updatepage-field-subject ">
-                            <dt class="b-updatepage-field-head">
-                                <span class="b-updatepage-field-subhead">
-                                    <label for="subject">Subject</label>
-                                </span>
-                            </dt>
-                            <dd class="b-updatepage-field-body">
-                                <input type="text" name="subject" id="subject"
-                                       class="b-updatepage-input b-updatepage-input-subject" tabindex="40"
-                                       maxlength="100">
-                            </dd>
-                        </dl>
-                    </div>
-
-                    <div class="b-updatepage-event-section">
-                        <!-- Toolbar -->
-                        <div class="b-updateform-bar">
-                            <div>
-                                <a><span class="icon-cut" te></span></a>
-                                <a><span class="icon-copy"></span></a>
-                                <a><span class="icon-paste"></span></a>
-                                <span>|</span>
-                                <a><span class="icon-undo"></span></a>
-                                <a><span class="icon-repeat"></span></a>
-                                <span>|</span>
-                                <a><span class="icon-bold"></span></a>
-                                <a><span class="icon-italic"></span></a>
-                                <a><span class="icon-underline"></span></a>
-                                <a><span class="icon-font"></span></a>
-                                <span>|</span>
-                                <a><span class="icon-align-left"></span></a>
-                                <a><span class="icon-align-center"></span></a>
-                                <a><span class="icon-align-right"></span></a>
-                                <a><span class="icon-align-justify"></span></a>
-                                <a><span class="icon-columns"></span></a>
-                                <span>|</span>
-                                <a><span class="icon-indent-left"></span></a>
-                                <a><span class="icon-indent-right"></span></a>
-                                <a><span class="icon-link"></span></a>
-                                <span>|</span>
-                                <a><span class="icon-list"></span></a>
-                                <a><span class="icon-list-ol"></span></a>
-                                <a><span class="icon-list-ul"></span></a>
-
-
-                            </div>
-                        </div>
-                        <textarea name="body" id="body" cols="60" rows="10" class="b-updateform-textarea" tabindex="50"
-                                  autocomplete="off"></textarea>
-                    </div>
-                    <!-- /s-body  -->
-
+            <form action="" method="post" id="post">
+                <div class="b-updatepage-subjectbox">
+                    <dl class=" b-updatepage-field b-updatepage-field-subject ">
+                        <dt class="b-updatepage-field-head">
+                            <span class="b-updatepage-field-subhead">
+                                <label for="subject">Subject</label>
+                            </span>
+                        </dt>
+                        <dd class="b-updatepage-field-body" data-widget="restorable"
+                            data-widget-options='{"name":"subject"}'>
+                            <input type="text" name="subject" id="subject"
+                                   class="b-updatepage-input b-updatepage-input-subject" tabindex="40" maxlength="100">
+                        </dd>
+                    </dl>
                 </div>
+                <textarea id="edit" name="content"></textarea>
+                <button>Submit</button>
             </form>
 
+            <!-- Include jQuery. -->
+            <script type="text/javascript" src="utils/jquery/jquery.min.js"></script>
+
+            <!-- Include JS files. -->
+            <script type="text/javascript" src="utils/Froala/js/froala_editor.min.js"></script>
+
+            <!-- Include Code Mirror. -->
+            <script type="text/javascript" src="utils/jquery/codemirror.min.js"></script>
+            <script type="text/javascript" src="utils/jquery/xml.min.js"></script>
+
+            <!-- Include Plugins. -->
+            <script type="text/javascript" src="utils/Froala/js/plugins/align.min.js"></script>
+            <!--<script type="text/javascript" src="utils/Froala/js/plugins/char_counter.min.js"></script>-->
+            <script type="text/javascript" src="utils/Froala/js/plugins/code_beautifier.min.js"></script>
+            <script type="text/javascript" src="utils/Froala/js/plugins/code_view.min.js"></script>
+            <script type="text/javascript" src="utils/Froala/js/plugins/colors.min.js"></script>
+            <script type="text/javascript" src="utils/Froala/js/plugins/emoticons.min.js"></script>
+            <script type="text/javascript" src="utils/Froala/js/plugins/entities.min.js"></script>
+            <script type="text/javascript" src="utils/Froala/js/plugins/file.min.js"></script>
+            <script type="text/javascript" src="utils/Froala/js/plugins/font_family.min.js"></script>
+            <script type="text/javascript" src="utils/Froala/js/plugins/font_size.min.js"></script>
+            <script type="text/javascript" src="utils/Froala/js/plugins/fullscreen.min.js"></script>
+            <script type="text/javascript" src="utils/Froala/js/plugins/image.min.js"></script>
+            <script type="text/javascript" src="utils/Froala/js/plugins/image_manager.min.js"></script>
+            <script type="text/javascript" src="utils/Froala/js/plugins/inline_style.min.js"></script>
+            <script type="text/javascript" src="utils/Froala/js/plugins/line_breaker.min.js"></script>
+            <script type="text/javascript" src="utils/Froala/js/plugins/link.min.js"></script>
+            <script type="text/javascript" src="utils/Froala/js/plugins/lists.min.js"></script>
+            <script type="text/javascript" src="utils/Froala/js/plugins/paragraph_format.min.js"></script>
+            <script type="text/javascript" src="utils/Froala/js/plugins/paragraph_style.min.js"></script>
+            <script type="text/javascript" src="utils/Froala/js/plugins/quick_insert.min.js"></script>
+            <script type="text/javascript" src="utils/Froala/js/plugins/quote.min.js"></script>
+            <script type="text/javascript" src="utils/Froala/js/plugins/table.min.js"></script>
+            <script type="text/javascript" src="utils/Froala/js/plugins/save.min.js"></script>
+            <script type="text/javascript" src="utils/Froala/js/plugins/url.min.js"></script>
+            <script type="text/javascript" src="utils/Froala/js/plugins/video.min.js"></script>
+
+            <!-- Include Language file if we want to use it. -->
+            <script type="text/javascript" src="utils/Froala/js/languages/ro.js"></script>
+
+            <!-- Initialize the editor. -->
+            <script>
+                $(function () {
+                    $('#edit').on('froalaEditor.initialized', function (e, editor) {
+                        editor.events.bindClick($('body'), '#save', function () {
+                            var fs = editor.html.get();
+                            editor.events.focus();
+                        });
+                    }).on('froalaEditor.initialized', function (e, editor) {
+                        editor.events.bindClick($('body'), '#release', function () {
+                            var fs = editor.html.get();
+                            $("#msgForm").submit();
+                            editor.events.focus();
+                        });
+                    }).froalaEditor({
+                        heightMin: 450,
+                        heightMax: 800,
+                        placeholderText: '',
+                        pastePlain: true,
+                        theme: 'gray',
+                        fontFamilySelection: false,
+                        fontSizeSelection: true,
+                        paragraphFormatSelection: false,
+                        toolbarStickyOffset: 53,
+                        toolbarButtons: ['fullscreen', '|', 'insertLink', 'insertImage', 'insertVideo', 'insertFile', 'insertTable', '|', 'quote', 'insertHR', 'subscript', 'superscript', 'undo', 'redo', '-', 'bold', 'italic', 'underline', 'strikeThrough', '|', 'fontFamily', '|', 'fontSize', '|', 'color', 'emoticons', 'inlineStyle', '-', 'paragraphFormat', '|', 'paragraphStyle', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', 'clearFormatting'],
+                        imageAllowedTypes: ['jpeg', 'jpg', 'png', 'gif'],
+                        imageDefaultWidth: 100,
+//             imageInsertButtons: ['imageBack', '|', 'imageUpload', 'imageByURL'],
+//             imageUploadURL: '/upload_image',
+                        imageManagerLoadURL: 'http://i.froala.com/assets/photo1.jpg',
+                        fileUploadURL: '/upload_file',
+                        language: 'zh_cn'
+                    });
+                });
+            </script>
 
         </div>
 
@@ -237,28 +303,42 @@
                             switch (curMonth) {
                                 case 0:
                                     monthText = "January".toUpperCase();
+                                    break;
                                 case 1:
                                     monthText = "February".toUpperCase();
+                                    break;
                                 case 2:
                                     monthText = "March".toUpperCase();
+                                    break;
                                 case 3:
                                     monthText = "April".toUpperCase();
+                                    break;
                                 case 4:
                                     monthText = "May".toUpperCase();
+                                    break;
                                 case 5:
                                     monthText = "June".toUpperCase();
+                                    break;
                                 case 6:
                                     monthText = "July".toUpperCase();
+                                    break;
                                 case 7:
                                     monthText = "August".toUpperCase();
+                                    break;
                                 case 8:
                                     monthText = "September".toUpperCase();
+                                    break;
                                 case 9:
                                     monthText = "October".toUpperCase();
+                                    break;
                                 case 10:
                                     monthText = "November".toUpperCase();
+                                    break;
                                 case 11:
                                     monthText = "December".toUpperCase();
+                                    break;
+                                default:
+                                    break;
                             }
                             document.write("<li>" + monthText + "<br><span style='color: #FFFFFF; font-size:16px'>" + curYear + "</span></li>");
                         </script>
@@ -309,7 +389,7 @@
 
                         // 打印当前月日历并高亮显示当前日期
                         do {
-                            if (today == dayNo && highlighted == false) {
+                            if (today === dayNo && highlighted === false) {
                                 calendar.innerHTML += "<li style='background: #43857b;color: white !important'>" + dayNo + "</li>\n";
                                 highlighted = true;
                             }
@@ -318,7 +398,7 @@
                             }
 
                             // 如果是当前月最后一天则从下个月第一天开始继续打印直到打印完35天为止
-                            if (dayNo == countDays)
+                            if (dayNo === countDays)
                                 dayNo = 1;
                             else
                                 dayNo++;
