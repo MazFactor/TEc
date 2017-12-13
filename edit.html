@@ -263,15 +263,16 @@
                         });
                     }).froalaEditor({
                         heightMin: 450,
-                        heightMax: 800,
+                        heightMax: 650,
                         placeholderText: '',
                         pastePlain: true,
                         theme: 'gray',
                         fontFamilySelection: false,
                         fontSizeSelection: true,
                         paragraphFormatSelection: false,
+                        toolbarSticky: false,
                         toolbarStickyOffset: 53,
-                        toolbarButtons: ['fullscreen', '|', 'insertLink', 'insertImage', 'insertVideo', 'insertFile', 'insertTable', '|', 'quote', 'insertHR', 'subscript', 'superscript', 'undo', 'redo', '-', 'bold', 'italic', 'underline', 'strikeThrough', '|', 'fontFamily', '|', 'fontSize', '|', 'color', 'emoticons', 'inlineStyle', '-', 'paragraphFormat', '|', 'paragraphStyle', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', 'clearFormatting'],
+                        toolbarButtons: ['fullscreen', '|', 'insertLink', 'insertImage', 'insertVideo', 'insertFile', 'insertTable', '|', 'quote', 'insertHR', 'subscript', 'superscript', 'undo', 'redo', '-', 'bold', 'italic', 'underline', 'strikeThrough', '|', 'fontFamily', '|', 'fontSize', '|', 'color', 'emoticons', 'inlineStyle', '-', 'paragraphFormat', '|', 'paragraphStyle', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', 'clearFormatting', 'html'],
                         imageAllowedTypes: ['jpeg', 'jpg', 'png', 'gif'],
                         imageDefaultWidth: 100,
 //             imageInsertButtons: ['imageBack', '|', 'imageUpload', 'imageByURL'],
@@ -370,12 +371,12 @@
                         var highlighted = false; // 是否已高亮显示过当前日期?
                         curDate.setDate(1); //
                         var firstDayCurMonth = curDate.getDay(); // 当前月的1号是周几
-                        var moMatch = [0, 1, 2, 3, 4, 5, 6];
+                        var moMatch = [6, 0, 1, 2, 3, 4, 5];
 
                         curDate.setDate(0);
                         var lastDayLastMonth = curDate.getDate();
-                        var dayNo = lastDayLastMonth - parseInt(moMatch[firstDayCurMonth]) + 1;
-                        var restCount = 42 - moMatch[firstDayCurMonth]; // 仅显示42天的日历
+                        var dayNo = lastDayLastMonth - parseInt(moMatch[firstDayCurMonth]);
+                        var restCount = 42 - moMatch[firstDayCurMonth] - 1; // 仅显示42天的日历
 
                         // 打印上个月日期
                         do {
