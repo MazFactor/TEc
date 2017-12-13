@@ -249,38 +249,33 @@
 
             <!-- Initialize the editor. -->
             <script>
-                $(function () {
-                    $('#edit').on('froalaEditor.initialized', function (e, editor) {
-                        editor.events.bindClick($('body'), '#save', function () {
-                            var fs = editor.html.get();
-                            editor.events.focus();
-                        });
-                    }).on('froalaEditor.initialized', function (e, editor) {
-                        editor.events.bindClick($('body'), '#release', function () {
-                            var fs = editor.html.get();
-                            $("#msgForm").submit();
-                            editor.events.focus();
-                        });
-                    }).froalaEditor({
-                        heightMin: 450,
-                        heightMax: 800,
-                        placeholderText: '',
-                        pastePlain: true,
-                        theme: 'gray',
-                        fontFamilySelection: false,
-                        fontSizeSelection: true,
-                        paragraphFormatSelection: false,
-                        toolbarSticky: false,
-                        toolbarStickyOffset: 53,
-                        toolbarButtons: ['fullscreen', '|', 'insertLink', 'insertImage', 'insertVideo', 'insertFile', 'insertTable', '|', 'quote', 'insertHR', 'subscript', 'superscript', 'undo', 'redo', '-', 'bold', 'italic', 'underline', 'strikeThrough', '|', 'fontFamily', '|', 'fontSize', '|', 'color', 'emoticons', 'inlineStyle', '-', 'paragraphFormat', '|', 'paragraphStyle', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', 'clearFormatting', 'html'],
-                        imageAllowedTypes: ['jpeg', 'jpg', 'png', 'gif'],
-                        imageDefaultWidth: 100,
-//             imageInsertButtons: ['imageBack', '|', 'imageUpload', 'imageByURL'],
-//             imageUploadURL: '/upload_image',
-                        imageManagerLoadURL: 'http://i.froala.com/assets/photo1.jpg',
-                        fileUploadURL: '/upload_file',
-                        language: 'zh_cn'
-                    });
+                $(function(){
+                    //超大屏幕
+                    var toolbarButtons   = ['fullscreen', 'bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'fontFamily', 'fontSize', '|', 'color', 'emoticons', 'inlineStyle', 'paragraphStyle', '|', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', 'quote', 'insertHR', '-', 'insertLink', 'insertImage', 'insertVideo', 'insertFile', 'insertTable', 'undo', 'redo', 'clearFormatting', 'selectAll', 'html'];
+                    //大屏幕
+                    var toolbarButtonsMD = ['fullscreen', 'bold', 'italic', 'underline', 'fontFamily', 'fontSize', 'color', 'paragraphStyle', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', 'quote', 'insertHR', 'insertLink', 'insertImage', 'insertVideo', 'insertFile', 'insertTable', 'undo', 'redo', 'clearFormatting'];
+                    //小屏幕
+                    var toolbarButtonsSM = ['fullscreen', 'bold', 'italic', 'underline', 'fontFamily', 'fontSize', 'insertLink', 'insertImage', 'insertTable', 'undo', 'redo'];
+                    //手机
+                    var toolbarButtonsXS = ['bold', 'italic', 'fontFamily', 'fontSize', 'undo', 'redo'];
+                    $('#edit').froalaEditor({
+                        charCounterCount       : true,//默认
+                        charCounterMax         : -1,//默认
+                        language                 : 'zh_cn',
+                        saveInterval            : 0,//不自动保存，默认10000
+                        theme                    : "red",
+                        height                   : "650px",
+                        toolbarBottom           : false,//默认
+                        toolbarButtonsMD        : toolbarButtonsMD,
+                        toolbarButtonsSM        : toolbarButtonsSM,
+                        toolbarButtonsXS        : toolbarButtonsXS,
+                        toolbarInline           : false,//true选中设置样式,默认false
+                        imageUploadMethod       : 'POST',
+                        imageUploadURL           : './lib/imgUpload.php',
+                        //imageUploadParam         : 'upImg',
+                        imageUploadParams        : {id: "edit"},
+                        placeholderText          : '博客从此开始',
+                    })
                 });
             </script>
 
