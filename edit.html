@@ -37,10 +37,11 @@
 
 
     <!-- Calendar & Clock -->
-    <link rel="stylesheet" type="text/css" href="CSS/calendar.css">
+    <link rel="stylesheet" type="text/css" href="css/calendar.css">
     <!-- Icons from GroundworkCss -->
-    <link rel="stylesheet" type="text/css" href="CSS/edit.css">
-
+    <link rel="stylesheet" type="text/css" href="css/edit.css">
+    <!-- Groundwork -->
+    <!--<link rel="stylesheet" type="text/css" href="utils/groundwork/css/groundwork.css">-->
     <script type="text/javascript" src="js/Clock.js"></script>
     <style type="text/css">
         * {
@@ -53,6 +54,7 @@
 
         html, body {
             height: 100%;
+            background: #fbfbf2
         }
 
         #header {
@@ -64,8 +66,14 @@
             position: relative;
             background-color: #004359;
             padding-top: 16px;
-            border: 6px solid #ffffff;
+            border: 6px solid #fbfbf2;
             border-width: 6px 0 0;
+        }
+
+        .headerwrap {
+            margin: 0 auto;
+            height: 45px;
+            background: url(img/headerbg.png) top center repeat-x;
         }
 
         #nav-sec {
@@ -96,7 +104,7 @@
         }
 
         #content {
-            background-color: #ffffff;
+            background-color: #FBFBF2;
             width: 100%;
             min-height: 100%;
 
@@ -105,20 +113,21 @@
         }
 
         .column-all {
-            display: -webkit-flex;
+            isplay: -webkit-flex;
             display: flex;
-            margin: 80px 20px 80px 90px;
+            margin: auto;
             height: 100%;
-            background-color: #ffffff;
+            /*background-color: #89b2a1;*/
+            max-width: 1100px;
         }
 
         .column-left {
             -webkit-flex: initial;
             flex: initial;
-            width: 65%;
+            max-width: 640px;
             min-width: 100px;
-            border-right: solid 1px #DAE3E6;
-            padding-right: 30px;
+            margin: 60px 0 60px 0;
+            /*border-right: solid 1px #DAE3E6;*/
         }
 
         .column-right {
@@ -128,9 +137,18 @@
             align-items: center;
             -webkit-justify-content: center;
             justify-content: center;
-            border-top: solid 1px #DAE3E6;
+            min-width: 420px;
+            margin: 60px 0 60px 40px;
+            /*border-top: solid 1px #DAE3E6;*/
         }
 
+        .footertop {
+            width: 100%;
+            background: transparent url(img/footertop.png) top center no-repeat;
+            clear: both;
+            height: 78px;
+            margin: 0 auto;
+        }
         #footer {
             border: solid 1px #313131;
             width: 100%;
@@ -183,6 +201,7 @@
     </div>
 </div>
 
+<div class="headerwrap"></div>
 <!--Content-->
 <div id="content">
     <div class="column-all">
@@ -199,11 +218,12 @@
                         <dd class="b-updatepage-field-body" data-widget="restorable"
                             data-widget-options='{"name":"subject"}'>
                             <input type="text" name="subject" id="subject"
-                                   class="b-updatepage-input b-updatepage-input-subject" tabindex="40" maxlength="100">
+                                   class="b-updatepage-input b-updatepage-subjectbox" tabindex="40" maxlength="100">
+                            <!--<input id="name" type="text" placeholder="First & Last Name">-->
                         </dd>
                     </dl>
                 </div>
-                <textarea id="edit" name="content"></textarea>
+                <textarea id="edit" name="content" ></textarea>
                 <button>Submit</button>
             </form>
 
@@ -261,10 +281,10 @@
                     $('#edit').froalaEditor({
                         charCounterCount       : true,//默认
                         charCounterMax         : -1,//默认
-                        language                 : 'zh_cn',
+                        language                : 'zh_cn',
                         saveInterval            : 0,//不自动保存，默认10000
-                        theme                    : "red",
-                        height                   : "850px",
+                        theme                   : "blue",
+                        height                  : "600px",
                         toolbarBottom           : false,//默认
                         toolbarButtonsMD        : toolbarButtonsMD,
                         toolbarButtonsSM        : toolbarButtonsSM,
@@ -293,7 +313,6 @@
                         <script type="text/javascript">
                             var date = new Date();
                             var curYear = date.getFullYear();
-
                             var curMonth = date.getMonth();
                             var monthText = "";
 
@@ -340,16 +359,25 @@
                             document.write("<li>" + monthText + "<br><span style='color: #FFFFFF; font-size:16px'>" + curYear + "</span></li>");
                         </script>
                     </ul>
+                    <!--<ul>-->
+                    <!--<li class="prev">&#10094;</li>-->
+                    <!--<li class="next">&#10095;</li>-->
+                    <!--<li>-->
+
+                    <!--August<br>-->
+                    <!--<span style="font-size:16px">2017</span>-->
+                    <!--</li>-->
+                    <!--</ul>-->
                 </div>
 
                 <ul class="weekdays">
+                    <li>Su</li>
                     <li>Mo</li>
                     <li>Tu</li>
                     <li>We</li>
                     <li>Th</li>
                     <li>Fr</li>
                     <li>Sa</li>
-                    <li>Su</li>
                 </ul>
 
                 <ul class="days">
@@ -367,7 +395,7 @@
                         var highlighted = false; // 是否已高亮显示过当前日期?
                         curDate.setDate(1); //
                         var firstDayCurMonth = curDate.getDay(); // 当前月的1号是周几
-                        var moMatch = [6, 0, 1, 2, 3, 4, 5];
+                        var moMatch = [6, 0, 1, 2, 3, 4, 5]; // 1号前空出来几天
 
                         curDate.setDate(0);
                         var lastDayLastMonth = curDate.getDate();
@@ -394,7 +422,7 @@
                                 calendar.innerHTML += "<li>" + dayNo + "</li>\n";
                             }
 
-                            // 如果是当前月最后一天则从下个月第一天开始继续打印直到打印完35天为止
+                            // 如果是当前月最后一天则从下个月第一天开始继续打印直到打印完42天为止
                             if (dayNo === countDays)
                                 dayNo = 1;
                             else
@@ -410,7 +438,7 @@
 
 </div>
 
-
+<div class="footertop"></div>
 <!-- Footer -->
 <div id="footer">
     <p><br/>
