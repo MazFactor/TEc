@@ -12,8 +12,8 @@ body {
 }
 
 #Calendar{
-    width: 100%;
-    padding-left: 40px;
+    width: 420px;
+    padding-left: 0px;
     margin-top: 20px;
     padding-bottom: 20px;
     border-bottom: solid 1px #DAE3E6;
@@ -29,7 +29,6 @@ body {
 .month ul {
     margin: 0;
     padding: 0;
-
 }
 
 .month ul li {
