@@ -107,3 +107,10 @@
 .icon-rotate-right:before, .icon-repeat:before {
     content: "\f01e"
 }
+
+.icon-plus:after{
+    content: "\f067";
+    font-size: large;
+    padding: 95%;
+
+}

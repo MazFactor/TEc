@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Page</title>
-    <link rel="stylesheet" type="text/css" href="css/calendar.css">
-    <link rel="stylesheet" type="text/css" href="css/my_groundwork.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Calendar.css">
+    <link rel="stylesheet" type="text/css" href="CSS/my_groundwork.css">
+    <link rel="stylesheet" type="text/css" href="utils/Flat-UI-master/css/flat-ui.css">
     <script type="text/javascript" src="js/Clock.js"></script>
     <style type="text/css">
         * {
@@ -51,7 +52,7 @@
             text-align: center;
         }
 
-        .login {
+        .signin {
             color: #FFFFFF;
             line-height: 70px;
             /*font-family: Serif;*/
@@ -87,7 +88,7 @@
             display: -webkit-flex;
             display: flex;
             margin: 80px 20px 80px 90px;
-            height: 100%;
+            min-height: 100%;
             /*background-color: #89b2a1;*/
         }
 
@@ -177,7 +178,6 @@
         }
 
     </style>
-    <link rel="stylesheet" href="../../Downloads/The Icons from GroundworkCss/css/groundwork.css">
 </head>
 <body onload="showTime();">
 
@@ -193,7 +193,7 @@
             <div id="sign">
                 <ul>
                     <li style="list-style-type:none;">
-                        <span class="login">Sign in</span>
+                        <span class="signin">Sign in</span>
                         <!--<i class="icon-github" aria-hidden="true"></i>-->
                     </li>
                 </ul>
@@ -207,7 +207,9 @@
     <div class="column-all">
         <!-- Left Part -->
         <div class="column-left">
-            <div id="before-article"></div>
+            <div id="before-article"><a id="insertArticle" href="edit" methods="get" class="fui-plus-circle"></a></div>
+            <!--<span class="icon-plus"></span>-->
+            <!--<div id="before-article"></div>-->
 
             <article>
                 <h2>Hammer responds to Buzzfeed article pointing out that Armie Hammer is a…</h2>
