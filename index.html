@@ -18,6 +18,7 @@
 
         html, body {
             height: 100%;
+            background: #fbfbf2
         }
 
         #header {
@@ -29,8 +30,14 @@
             position: relative;
             background-color: #004359;
             padding-top: 16px;
-            border: 6px solid #ffffff;
+            border: 6px solid #fbfbf2;
             border-width: 6px 0 0;
+        }
+
+        .headerwrap {
+            margin: 0 auto;
+            height: 45px;
+            background: url(img/headerbg.png) top center repeat-x;
         }
 
         #nav-sec {
@@ -76,7 +83,8 @@
         /*}*/
 
         #content {
-            background-color: #ffffff;
+            background-color: #FBFBF2;
+            /*background-color: #FFFFFF;*/
             width: 100%;
             min-height: 100%;
 
@@ -87,28 +95,35 @@
         .column-all {
             display: -webkit-flex;
             display: flex;
+<<<<<<< HEAD
             margin: 80px 20px 80px 90px;
             min-height: 100%;
+=======
+            margin: auto;
+            height: 100%;
+>>>>>>> 6552a6169a6f7af67458448317825e347e11ad81
             /*background-color: #89b2a1;*/
+            max-width: 1100px;
         }
 
         .column-left {
             -webkit-flex: initial;
             flex: initial;
-            width: 65%;
+            max-width: 640px;
             min-width: 100px;
-            border-right: solid 1px #DAE3E6;
+            margin: 60px 0 60px 0;
+            /*border-right: solid 1px #DAE3E6;*/
         }
 
         #before-article {
-            border-bottom: solid 1px #DAE3E6;
+            /*border-bottom: solid 1px #DAE3E6;*/
         }
 
         article {
-            border-bottom: solid 1px #DAE3E6;
             padding-top: 13px;
             padding-bottom: 30px;
-            padding-right: 40px;
+            /*border-bottom: solid 1px #DAE3E6;*/
+            /*padding-right: 40px;*/
         }
 
         span {
@@ -141,8 +156,17 @@
             align-items: center;
             -webkit-justify-content: center;
             justify-content: center;
-            border-top: solid 1px #DAE3E6;
+            min-width: 420px;
+            margin: 60px 0 60px 40px;
+            /*border-top: solid 1px #DAE3E6;*/
+        }
 
+        .footertop {
+            width: 100%;
+            background: transparent url(img/footertop.png) top center no-repeat;
+            clear: both;
+            height: 78px;
+            margin: 0 auto;
         }
 
         #footer {
@@ -201,7 +225,7 @@
         </a>
     </div>
 </div>
-
+<div class="headerwrap"></div>
 <!--Content Begin-->
 <div id="content">
     <div class="column-all">
@@ -369,7 +393,7 @@
                         var highlighted = false; // 是否已高亮显示过当前日期?
                         curDate.setDate(1); //
                         var firstDayCurMonth = curDate.getDay(); // 当前月的1号是周几
-                        var moMatch = [6, 0, 1, 2, 3, 4, 5];
+                        var moMatch = [6, 0, 1, 2, 3, 4, 5]; // 1号前空出来几天
 
                         curDate.setDate(0);
                         var lastDayLastMonth = curDate.getDate();
@@ -396,7 +420,7 @@
                                 calendar.innerHTML += "<li>" + dayNo + "</li>\n";
                             }
 
-                            // 如果是当前月最后一天则从下个月第一天开始继续打印直到打印完35天为止
+                            // 如果是当前月最后一天则从下个月第一天开始继续打印直到打印完42天为止
                             if (dayNo === countDays)
                                 dayNo = 1;
                             else
@@ -412,7 +436,7 @@
 
 </div>
 
-
+<div class="footertop"></div>
 <!-- Footer -->
 <div id="footer">
     <p><br/>
